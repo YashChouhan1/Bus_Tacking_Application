@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BusActivity"
+    android:background="@drawable/bus">
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/rounder"
+
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:text="MAIN MENU"
+        android:textColor="@color/black"
+        android:textSize="42dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/mapSection"
+        android:layout_width="356dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/text"
+        android:layout_marginTop="150dp"
+
+        android:layout_centerHorizontal="true"
+
+        android:background="@drawable/rounder3"
+        android:text="Show Location"
+
+        android:textSize="20dp" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="158dp"
+        android:layout_height="90dp"
+        android:layout_below="@+id/mapSection"
+        android:layout_centerHorizontal="true"
+      android:layout_marginTop="5dp"
+        android:contentDescription="@string/signupimage"
+        android:src="@drawable/bus2" />
+
+    <Button
+        android:id="@+id/routeSection"
+        android:layout_width="356dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/image"
+
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/rounder3"
+        android:text="Show Routes"
+        android:textSize="20dp"
+ />
+
+    <Button
+        android:id="@+id/signoutButton"
+        android:layout_width="80dp"
+        android:layout_height="55dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="17dp"
+        android:backgroundTint="#FA5B61"
+        android:text="Sign Out"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

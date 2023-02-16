@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Bus Buddy</string>
+    <string-array name="Bus_ID">
+        <item>Bus no.1</item>
+        <item>Bus no.2</item>
+        <item>Bus no.3</item>
+        <item>Bus no.4</item>
+        <item>Bus no.5</item>
+        <item>Bus no.6</item>
+        <item>Bus no.7</item>
+        <item>Bus no.8</item>
+        <item>Bus no.10</item>
+        <item>Bus no.11</item>
+        <item>Bus no.12</item>
+        <item>Bus no.13</item>
+        <item>Bus no.14</item>
+        <item>Bus no.15</item>
+    </string-array>
+    <string name="don_t_have_an_account_sign_up"> <u>No account? <b>Create one</b></u>.</string>
+    <string name="title_activity_map">Map_Activity</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="signupimage">SignUpImage</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="date_of_birth">Date Of Birth</string>
+    <string name="login">LOGIN</string>
+    <string name="select_bus">Select Bus</string>
+    <string name="bus_rto_no_mp_09_hc_7956">Bus RTO No : MP 09 HC 7956</string>
+</resources>
