@@ -19,6 +19,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="33">
         <activity
+            android:name=".Driver_Activity"
+            android:exported="false" />
+        <activity
             android:name=".Bus_List_Package.BUS_2"
             android:exported="false" />
         <activity

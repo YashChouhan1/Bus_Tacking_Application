@@ -2,17 +2,26 @@ package com.example.busbuddydemo;
 
 public class UserModel {
 
-    private String name, email, dob, password;
+    private String name, email, dob, password, number;
 
     public UserModel(){
 
     }
 
-    public UserModel(String name, String email, String dob, String password) {
+    public UserModel(String name, String email, String dob, String password , String number) {
         this.name = name;
         this.email = email;
         this.dob = dob;
         this.password = password;
+        this.number = number;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
     }
 
     public String getName() {

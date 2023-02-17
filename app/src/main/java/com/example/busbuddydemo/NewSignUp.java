@@ -41,7 +41,7 @@ import java.util.Objects;
 
 public class NewSignUp extends AppCompatActivity {
 
-    EditText username , password, dob, email;
+    EditText username , password, dob, email , mobileNumber;
     Button create_account;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
@@ -56,6 +56,7 @@ public class NewSignUp extends AppCompatActivity {
          password = findViewById(R.id.password);
          dob = findViewById(R.id.dob);
          email = findViewById(R.id.email);
+         mobileNumber = findViewById(R.id.mobile_number);
          create_account = findViewById(R.id.create_account_button);
          firebaseAuth = FirebaseAuth.getInstance();
          progressDialog = new ProgressDialog(this);
@@ -97,35 +98,44 @@ public class NewSignUp extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String usernamepass, emailpass, passwordpass, dobpass;
-                usernamepass = String.valueOf(username.getText()).trim();
-                passwordpass = String.valueOf(password.getText()).trim();
-                emailpass = email.getText().toString().trim();
-                dobpass = String.valueOf(dob.getText()).trim();
+                if (!username.getText().toString().trim().equals("")  && !email.getText().toString().trim().equals("") && !password.getText().toString().trim().equals("") && !mobileNumber.getText().toString().trim().equals("") && !dob.getText().toString().trim().equals(""))
+                if (mobileNumber.getText().length() == 10) {
 
-                progressDialog.show();
+                    String usernamepass, emailpass, passwordpass, dobpass, numberpass;
+                    usernamepass = String.valueOf(username.getText()).trim();
+                    passwordpass = String.valueOf(password.getText()).trim();
+                    emailpass = email.getText().toString().trim();
+                    dobpass = String.valueOf(dob.getText()).trim();
+                    numberpass = String.valueOf(mobileNumber.getText()).trim();
 
-                firebaseAuth.createUserWithEmailAndPassword(emailpass, passwordpass)
-                        .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                            @Override
-                            public void onSuccess(AuthResult authResult) {
-                                Toast.makeText(NewSignUp.this, "User Registered Successfully.", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(NewSignUp.this, LoginPage.class));
-                                progressDialog.cancel();
+                    progressDialog.show();
 
-                                firebaseFirestore.collection("User")
-                                        .document(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()))
-                                        .set(new UserModel(usernamepass, emailpass, dobpass, passwordpass));
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(NewSignUp.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                                progressDialog.cancel();
-                            }
-                        });
+                    firebaseAuth.createUserWithEmailAndPassword(emailpass, passwordpass)
+                            .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                                @Override
+                                public void onSuccess(AuthResult authResult) {
+                                    Toast.makeText(NewSignUp.this, "User Registered Successfully.", Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(NewSignUp.this, LoginPage.class));
+                                    progressDialog.cancel();
 
+                                    firebaseFirestore.collection("User")
+                                            .document(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()))
+                                            .set(new UserModel(usernamepass, emailpass, numberpass, dobpass, passwordpass));
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(NewSignUp.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    progressDialog.cancel();
+                                }
+                            });
+                } else {
+                    Toast.makeText(NewSignUp.this, "Mobile no. should contain 10 digits", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(NewSignUp.this, "Fields can not be empty", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 }
