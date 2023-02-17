@@ -148,15 +148,15 @@
         <Button
             android:id="@+id/create_account_button"
             android:layout_width="wrap_content"
-            android:layout_height="55dp"
+            android:layout_height="50dp"
             android:layout_alignParentStart="true"
             android:layout_marginHorizontal="13dp"
             android:layout_marginStart="22dp"
             android:layout_marginTop="40dp"
-            android:backgroundTint="#F8558D"
+            android:backgroundTint="@color/design_default_color_secondary"
             android:text="SIGN UP AS USER"
             android:textColor="@color/black"
-            android:textSize="16dp"
+            android:textSize="17dp"
             android:textStyle="bold" />
 
         <TextView
@@ -164,30 +164,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:layout_marginTop="55dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginLeft="11dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="53dp"
+            android:layout_marginEnd="2dp"
             android:layout_toStartOf="@+id/create_account_button_for_driver"
             android:layout_toEndOf="@+id/create_account_button"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="|"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/create_account_button_for_driver"
             android:layout_width="wrap_content"
-            android:layout_height="55dp"
+            android:layout_height="50dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginHorizontal="135dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="6dp"
-            android:backgroundTint="#FFC107"
+            android:backgroundTint="#FF6F40"
             android:text="SIGN UP AS DRIVER"
             android:textColor="@color/black"
-            android:textSize="16dp"
+            android:textSize="17dp"
             android:textStyle="bold" />
     </RelativeLayout>
 

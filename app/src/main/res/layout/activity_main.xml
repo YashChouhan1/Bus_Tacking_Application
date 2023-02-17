@@ -81,7 +81,7 @@
         android:layout_marginHorizontal="135dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
-        android:backgroundTint="@color/design_default_color_secondary"
+        android:backgroundTint="#FF6F40"
         android:text="LOGIN AS DRIVER"
         android:textColor="@color/black"
         android:textSize="18dp"
@@ -93,7 +93,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="29dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="1dp"
         android:layout_toStartOf="@+id/login_button_for_driver"
@@ -102,8 +102,8 @@
         android:gravity="center"
         android:text="|"
         android:textColor="@color/white"
-        android:textSize="18dp"
-        android:textStyle="bold" />
+        android:textSize="25dp"
+        />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/login_button"

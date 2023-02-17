@@ -43,10 +43,12 @@
         android:layout_marginTop="30dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="#F44336"
-        android:text="STOP SHARING"
+       android:text="STOP SHARING"
         android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold" />
+
+    <!-- mismatch function-->
 
     <Button
         android:id="@+id/stopSharing"
@@ -54,7 +56,7 @@
         android:layout_height="138dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"
-        android:backgroundTint="#2FD536"
+        android:backgroundTint="#1AD322"
         android:text="START SHARING"
         android:textColor="@color/black"
         android:textSize="20dp"

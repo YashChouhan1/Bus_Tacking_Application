@@ -179,7 +179,7 @@ public class LoginPage extends AppCompatActivity {
                 Toast.makeText(LoginPage.this, "SignIn Email : " + personEmail, Toast.LENGTH_SHORT).show();
             }
 
-            startActivity(new Intent(LoginPage.this, Bus_List.class));
+            startActivity(new Intent(LoginPage.this, BusActivity.class));
             // Signed in successfully, show authenticated UI.
 
         } catch (ApiException e) {
