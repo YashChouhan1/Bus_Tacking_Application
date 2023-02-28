@@ -34,6 +34,9 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.FirebaseDatabase;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
@@ -241,6 +244,22 @@ public class MapsActivityNew extends FragmentActivity implements OnMapReadyCallb
                   Double.toString(location.getLongitude());
 
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+
+        LocationHelper helper = new LocationHelper(location.getLongitude(), location.getLatitude());
+
+        FirebaseDatabase.getInstance().getReference("Current Location")
+                .setValue(helper).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+
+                        if(task.isSuccessful()){
+                            Toast.makeText(MapsActivityNew.this , "Location Saved" , Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                            Toast.makeText(MapsActivityNew.this , "Location Not Saved" , Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
 
         latLng = new LatLng(location.getLatitude() , location.getLongitude());
 
