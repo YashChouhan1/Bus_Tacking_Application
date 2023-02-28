@@ -115,7 +115,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/design_default_color_secondary"
-        android:text="LOGIN AS USER"
+        android:text="@string/login_as_user"
         android:textColor="@color/black"
         android:textSize="18dp"
         android:textStyle="bold" />

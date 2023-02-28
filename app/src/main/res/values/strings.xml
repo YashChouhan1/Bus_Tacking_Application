@@ -26,4 +26,8 @@
     <string name="login">LOGIN</string>
     <string name="select_bus">Select Bus</string>
     <string name="bus_rto_no_mp_09_hc_7956">Bus RTO No : MP 09 HC 7956</string>
+    <string name="title_activity_maps_new">MapsActivityNew</string>
+    <string name="disclaimer">please wait till the map is ready and don\'t close the activity until it loads</string>
+    <string name="login_as_user">LOGIN AS USER</string>
+    <string name="disclamer2">please wait till the map is ready and don\'t close the activity until it loads</string>
 </resources>

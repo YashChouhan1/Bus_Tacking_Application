@@ -30,7 +30,7 @@ public class BusActivity extends AppCompatActivity {
         location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(BusActivity.this, Map_Activity.class);
+                Intent intent = new Intent(BusActivity.this, MapsActivityNew.class);
                 startActivity(intent);
                 finish();
             }
