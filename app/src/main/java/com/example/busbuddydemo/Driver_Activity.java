@@ -62,7 +62,7 @@ public class Driver_Activity extends AppCompatActivity implements OnMapReadyCall
     private LatLng latLng;
 
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-    DatabaseReference databaseReference = firebaseDatabase.getReference().child("Driver");
+    DatabaseReference databaseReference = firebaseDatabase.getReference().child("Bus Location");
     private boolean isPermission;
     Button startSharing , stopSharing;
     //String busId = getIntent().getStringExtra("key");
@@ -244,10 +244,11 @@ public class Driver_Activity extends AppCompatActivity implements OnMapReadyCall
         Log.e(TAG, String.valueOf(location.getLatitude()));
         Log.e(TAG, String.valueOf(location.getLongitude()));
 
-        HashMap<String , Double> hashMap = new HashMap<>();
+        HashMap<String , String> hashMap = new HashMap<>();
 
-        hashMap.put("latitude" , location.getLatitude());
-        hashMap.put("longitude" , location.getLongitude());
+        hashMap.put("latitude" , String.valueOf(location.getLatitude()));
+        hashMap.put("longitude" , String.valueOf(location.getLongitude()));
+        hashMap.put("Bus No", busId);
 
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
 

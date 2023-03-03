@@ -43,7 +43,7 @@ public class BUS_2 extends AppCompatActivity {
                 new Data_For_Bus("17. GEETA BHAWAN SQ." , "07:10:00 AM" , "09:10:00 AM"),
                 new Data_For_Bus("18. ST. PAUL" , "07:13:00 AM" , "09:13:00 AM"),
                 new Data_For_Bus("19. AZAD NAGAR SQ." , "07:17:00 AM" , "09:17:00 AM"),
-                new Data_For_Bus("20. AERODRUM THANA" , "07:45:00 AM" , "09:45:00 AM"),
+                new Data_For_Bus("20. CDGI" , "07:45:00 AM" , "09:45:00 AM"),
         };
 
         Adapter_for_Bus adapter = new Adapter_for_Bus(mydata, BUS_2.this);

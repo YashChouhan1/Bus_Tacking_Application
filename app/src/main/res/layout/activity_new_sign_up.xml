@@ -37,7 +37,8 @@
         android:layout_marginTop="101dp"
         android:layout_marginEnd="157dp"
         android:src="@drawable/cdgi"
-        android:contentDescription="@string/signupimage" />
+        android:contentDescription="@string/signupimage"
+        />
 
     <EditText
         android:id="@+id/username"
@@ -163,7 +164,8 @@
             android:selectAllOnFocus="false"
             android:text="@string/sign_up_as_driver"
             android:textColor="#E91E63"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            />
 
 
     </RelativeLayout>
