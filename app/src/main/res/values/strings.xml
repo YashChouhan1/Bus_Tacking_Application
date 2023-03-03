@@ -30,4 +30,8 @@
     <string name="disclaimer">please wait till the map is ready and don\'t close the activity until it loads</string>
     <string name="login_as_user">LOGIN AS USER</string>
     <string name="disclamer2">please wait till the map is ready and don\'t close the activity until it loads</string>
+    <string name="title_activity_retrive_map_location">RetriveMapLocation</string>
+    <string name="sign_up_as_driver"><u>Sign up as driver</u></string>
+    <string name="title_activity_test">test</string>
+    <string name="warning">** Please do not cut this page until location sharing is started. Location sharing will start when toast messages start appearing. If <u>not responding dialog box</u> appears then click on <b>wait</b>. Because it take some time to start and stop location sharing</string>
 </resources>

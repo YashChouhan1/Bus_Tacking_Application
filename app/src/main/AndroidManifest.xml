@@ -15,10 +15,13 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/cdgi"
         android:supportsRtl="true"
+        android:testOnly="false"
         android:theme="@style/Theme.BusBuddydemo"
         android:usesCleartextTraffic="true"
         tools:targetApi="33">
-
+        <activity
+            android:name=".Bus_List_3"
+            android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -32,8 +35,22 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_API_KEY" />
+            android:value="AIzaSyAXoYIJgiiICOm_RiPBZIq4vpxSTJxZ6KQ" />
 
+        <activity
+            android:name=".test"
+            android:exported="false"
+            android:label="@string/title_activity_test" />
+        <activity
+            android:name=".Driver_Signup"
+            android:exported="false" />
+        <activity
+            android:name=".Bus_List2"
+            android:exported="false" />
+        <activity
+            android:name=".RetriveMapLocation"
+            android:exported="false"
+            android:label="@string/title_activity_retrive_map_location" />
         <activity
             android:name=".MapsActivityNew"
             android:exported="false"

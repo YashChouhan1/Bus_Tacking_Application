@@ -77,7 +77,7 @@ public class LoginPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (ContextCompat.checkSelfPermission(LoginPage.this, android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-                    if (!username.getText().toString().trim().equals("") && !username.getText().toString().trim().equals("")) {
+                    if (!username.getText().toString().trim().equals("") && !password.getText().toString().trim().equals("")) {
 
                         String username1 = username.getText().toString().trim();
                         String password1 = password.getText().toString().trim();
@@ -117,8 +117,34 @@ public class LoginPage extends AppCompatActivity {
         login_button_for_driver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginPage.this, Driver_Activity.class));
-                finish();
+
+                if (ContextCompat.checkSelfPermission(LoginPage.this, android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                    if (!username.getText().toString().trim().equals("") && !password.getText().toString().trim().equals("")) {
+
+                        String username1 = username.getText().toString().trim();
+                        String password1 = password.getText().toString().trim();
+
+                        firebaseAuth.signInWithEmailAndPassword(username1, password1)
+                                .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                                    @Override
+                                    public void onSuccess(AuthResult authResult) {
+                                        Toast.makeText(LoginPage.this, "Login Successfully.", Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(LoginPage.this, Bus_List_3.class));
+                                        finish();
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Toast.makeText(LoginPage.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                    } else {
+                        Toast.makeText(LoginPage.this, "Fields can not be empty", Toast.LENGTH_SHORT).show();
+                    }
+                } else{
+                    ActivityCompat.requestPermissions(LoginPage.this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE_FINE_LOCATION);
+                }
             }
         });
         signInButton.setOnClickListener(new View.OnClickListener() {
