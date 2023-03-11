@@ -11,7 +11,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.busbuddydemo.Bus_List_Package.BUS_1;
+import com.example.busbuddydemo.Bus_List_Package.BUS_10;
+import com.example.busbuddydemo.Bus_List_Package.BUS_11;
+import com.example.busbuddydemo.Bus_List_Package.BUS_12;
 import com.example.busbuddydemo.Bus_List_Package.BUS_2;
+import com.example.busbuddydemo.Bus_List_Package.BUS_3;
+import com.example.busbuddydemo.Bus_List_Package.BUS_4;
+import com.example.busbuddydemo.Bus_List_Package.BUS_5;
+import com.example.busbuddydemo.Bus_List_Package.BUS_6;
+import com.example.busbuddydemo.Bus_List_Package.BUS_8;
+import com.example.busbuddydemo.Bus_List_Package.BUS_9;
 
 public class Adapter_for_Bus extends RecyclerView.Adapter<Adapter_for_Bus.ViewHolder>{
 
@@ -23,6 +32,47 @@ public class Adapter_for_Bus extends RecyclerView.Adapter<Adapter_for_Bus.ViewHo
          this.context = activity;
     }
     public Adapter_for_Bus(Data_For_Bus[] data , BUS_2 activity){
+        this.data = data;
+        this.context = activity;
+    }
+
+    public Adapter_for_Bus(Data_For_Bus[] data , BUS_3 activity){
+        this.data = data;
+        this.context = activity;
+    }
+
+    public Adapter_for_Bus(Data_For_Bus[] data , BUS_4 activity){
+        this.data = data;
+        this.context = activity;
+    }
+
+    public Adapter_for_Bus(Data_For_Bus[] data , BUS_5 activity){
+        this.data = data;
+        this.context = activity;
+    }
+
+    public Adapter_for_Bus(Data_For_Bus[] data , BUS_6 activity){
+        this.data = data;
+        this.context = activity;
+    }
+
+    public Adapter_for_Bus(Data_For_Bus[] data , BUS_8 activity){
+        this.data = data;
+        this.context = activity;
+    }
+    public Adapter_for_Bus(Data_For_Bus[] data , BUS_9 activity){
+        this.data = data;
+        this.context = activity;
+    }
+    public Adapter_for_Bus(Data_For_Bus[] data , BUS_10 activity){
+        this.data = data;
+        this.context = activity;
+    }
+    public Adapter_for_Bus(Data_For_Bus[] data , BUS_11 activity){
+        this.data = data;
+        this.context = activity;
+    }
+    public Adapter_for_Bus(Data_For_Bus[] data , BUS_12 activity){
         this.data = data;
         this.context = activity;
     }

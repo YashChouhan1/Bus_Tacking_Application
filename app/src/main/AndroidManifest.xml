@@ -20,6 +20,33 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="33">
         <activity
+            android:name=".Bus_List_Package.BUS_12"
+            android:exported="false" />
+        <activity
+            android:name=".Bus_List_Package.BUS_11"
+            android:exported="false" />
+        <activity
+            android:name=".Bus_List_Package.BUS_10"
+            android:exported="false" />
+        <activity
+            android:name=".Bus_List_Package.BUS_9"
+            android:exported="false" />
+        <activity
+            android:name=".Bus_List_Package.BUS_8"
+            android:exported="false" />
+        <activity
+            android:name=".Bus_List_Package.BUS_3"
+            android:exported="false" />
+        <activity
+            android:name=".Bus_List_Package.BUS_4"
+            android:exported="false" />
+        <activity
+            android:name=".Bus_List_Package.BUS_5"
+            android:exported="false" />
+        <activity
+            android:name=".Bus_List_Package.BUS_6"
+            android:exported="false" />
+        <activity
             android:name=".Bus_List_3"
             android:exported="false" />
         <!--

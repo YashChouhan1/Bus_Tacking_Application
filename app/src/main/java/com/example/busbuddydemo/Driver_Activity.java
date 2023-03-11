@@ -1,6 +1,7 @@
 package com.example.busbuddydemo;
 
 import static android.content.ContentValues.TAG;
+import static android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,6 +21,7 @@ import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -47,7 +49,7 @@ import java.util.HashMap;
 public class Driver_Activity extends AppCompatActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
-        com.google.android.gms.location.LocationListener{
+        com.google.android.gms.location.LocationListener {
 
     private GoogleApiClient mGoogleApiClient;
     private Location mLocation;
@@ -56,6 +58,7 @@ public class Driver_Activity extends AppCompatActivity implements OnMapReadyCall
     private com.google.android.gms.location.LocationListener listener;
     private final long UPDATE_INTERVAL = 5000;
     private final long FASTEST_INTERVAL = 5000;
+    private static final int REQUEST_LOCATION_SETTINGS = 1;
     private final long MIN_DISTANCE = 5;
     private LocationManager locationManager;
     private LocationListener locationListener;
@@ -64,7 +67,8 @@ public class Driver_Activity extends AppCompatActivity implements OnMapReadyCall
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     DatabaseReference databaseReference = firebaseDatabase.getReference().child("Bus Location");
     private boolean isPermission;
-    Button startSharing , stopSharing;
+    Button startSharing, stopSharing;
+    ImageView imageView;
     //String busId = getIntent().getStringExtra("key");
 
 //    Bundle bundle = getIntent().getExtras();
@@ -78,20 +82,38 @@ public class Driver_Activity extends AppCompatActivity implements OnMapReadyCall
         setContentView(R.layout.activity_driver);
         startSharing = findViewById(R.id.stopSharing);   //little mismatch but ok....
         stopSharing = findViewById(R.id.startSharing);
+        imageView = findViewById(R.id.image);
 
         callingActivity = getIntent().getIntExtra("calling-activity", 0);
         switch (callingActivity) {                               // this is used to know the previous activity
             case ActivityConstants.ACTIVITY_FROM_SIGNUP:      // because there are two bus list first in driver login
-                 busId = Driver_Signup.busId;                 // and second in driver signup.
-                 break;
+                busId = Driver_Signup.busId;                 // and second in driver signup.
+                break;
             case ActivityConstants.ACTIVITY_FROM_LOGIN:
-                 busId = Bus_List_3.busId;
-                 break;
+                busId = Bus_List_3.busId;
+                break;
         }
         Log.e(TAG, busId);
 
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final AlertDialog.Builder dialog = new AlertDialog.Builder(Driver_Activity.this);
+                dialog.setTitle("Warning");
+                dialog.setMessage("** Please do not cut this page until location sharing is started. Location sharing will start when toast messages start appearing. If <u>not responding dialog box," +
+                        "</u> appears then click on <b>wait</b>. Because it take some time to start and stop location sharing");
 
-        if(requestSinglePermission()) {
+                dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Handle positive button click
+                    }
+                });
+                dialog.show();
+            }
+        });
+
+        if (requestSinglePermission()) {
 
             mGoogleApiClient = new GoogleApiClient.Builder(this)
                     .addConnectionCallbacks(this)
@@ -103,7 +125,7 @@ public class Driver_Activity extends AppCompatActivity implements OnMapReadyCall
 
             checkLocation();
         }
-        if(checkLocation()) {
+        if (checkLocation()) {
             startSharing.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -116,7 +138,7 @@ public class Driver_Activity extends AppCompatActivity implements OnMapReadyCall
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(Driver_Activity.this, "Location sharing stopped", Toast.LENGTH_SHORT).show();
-                    if(mGoogleApiClient.isConnected()){
+                    if (mGoogleApiClient.isConnected()) {
                         mGoogleApiClient.disconnect();
                     }
                 }
@@ -141,8 +163,7 @@ public class Driver_Activity extends AppCompatActivity implements OnMapReadyCall
                 .setPositiveButton("Location Setting", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                        startActivity(intent);
+                        startActivity(new Intent(ACTION_LOCATION_SOURCE_SETTINGS));
                     }
                 })
                 .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
@@ -151,7 +172,8 @@ public class Driver_Activity extends AppCompatActivity implements OnMapReadyCall
 
                     }
                 });
-        dialog.show();
+        AlertDialog alertDialog = dialog.create();
+        alertDialog.show();
     }
 
     private boolean isLocationEnabled() {

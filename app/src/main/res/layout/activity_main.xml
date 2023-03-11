@@ -9,6 +9,7 @@
     tools:context=".LoginPage">
 
     <TextView
+        android:id="@+id/text111"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -28,7 +29,8 @@
         android:layout_marginTop="105dp"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="40dp"
-        android:src="@drawable/cdgi" />
+        android:src="@drawable/cdgi"
+        />
 
     <EditText
         android:id="@+id/username"

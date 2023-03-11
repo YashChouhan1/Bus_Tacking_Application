@@ -47,13 +47,14 @@
         android:layout_marginTop="101dp"
         android:layout_marginEnd="157dp"
         android:src="@drawable/cdgi"
+        android:visibility="gone"
         />
 
     <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/image_cdgi"
+        android:layout_below="@id/text"
         android:layout_marginHorizontal="40dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="33dp"
@@ -66,7 +67,8 @@
         android:inputType="text"
         android:padding="17dp"
         android:textColor="@color/white"
-        android:textColorHint="@color/white" />
+        android:textColorHint="@color/white"
+        />
 
     <EditText
         android:id="@+id/email"
