@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Bus Buddy</string>
     <string-array name="Bus_ID">
+        <item><color>Select your bus</color></item>
         <item>Bus no.1</item>
         <item>Bus no.2</item>
         <item>Bus no.3</item>
