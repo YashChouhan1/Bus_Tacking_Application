@@ -90,7 +90,7 @@ public class LocationServices2 extends Service implements com.google.android.gms
         builder.setSmallIcon(R.mipmap.ic_launcher);
         builder.setContentTitle("BUS BUDDY");
         builder.setDefaults(NotificationCompat.DEFAULT_ALL);
-        builder.setContentText("Location Service Running");
+        builder.setContentText("Location Services Running");
         builder.setContentIntent(pendingIntent);
         builder.setAutoCancel(false);
         builder.setPriority(NotificationCompat.PRIORITY_MAX);

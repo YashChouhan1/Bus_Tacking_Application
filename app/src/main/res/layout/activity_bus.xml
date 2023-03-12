@@ -33,7 +33,7 @@
         android:background="@drawable/rounder3"
         android:text="Show Location"
 
-        android:textSize="20dp" />
+        android:textSize="24dp" />
 
     <ImageView
         android:id="@+id/image"
@@ -55,7 +55,7 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/rounder3"
         android:text="Show Routes"
-        android:textSize="20dp"
+        android:textSize="24dp"
  />
 
     <Button

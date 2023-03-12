@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAF0F3"
+    android:background="#FBE1DF"
     tools:context=".DriverActivity2">
 
 
@@ -14,14 +13,13 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_centerHorizontal="true"
-        android:text="DRIVER'S LOCATION"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:textColor="#FD0E0B0B"
-        android:gravity="center"
-        android:textSize="38sp"
-        android:textStyle="bold"
         android:background="@drawable/edittext_background2"
-        />
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:text="DRIVER'S LOCATION"
+        android:textColor="#FD0E0B0B"
+        android:textSize="38sp"
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/image"
@@ -38,56 +36,53 @@
         android:id="@+id/busNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="BUS ID"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        android:textColor="#5B14DA"
         android:layout_below="@id/text"
-        />
-
-    <Button
-        android:id="@+id/startSharing"
-        android:layout_width="138dp"
-        android:layout_height="138dp"
-        android:layout_below="@+id/stopSharing"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="20dp"
-        android:backgroundTint="#F44336"
-       android:text="STOP SHARING"
-        android:textColor="@color/black"
-        android:textSize="20dp"
+        android:text="BUS ID"
+        android:textColor="#2D49E8"
+        android:textSize="30dp"
         android:textStyle="bold" />
 
-    <!-- mismatch function-->
-
-    <Button
-        android:id="@+id/stopSharing"
-        android:layout_width="138dp"
-        android:layout_height="138dp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card2"
+        android:layout_width="290dp"
+        android:layout_height="350dp"
+        android:layout_below="@id/busNo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
-        android:backgroundTint="#1AD322"
-        android:text="START SHARING"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+        android:layout_marginTop="40dp"
+        app:cardCornerRadius="20dp"
+        >
 
-    <TextView
-        android:id="@+id/warning1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/startSharing"
-        android:layout_marginTop="140dp"
-        android:layout_marginHorizontal="10dp"
-        android:text="@string/warning"
-        android:padding="10dp"
-        android:textSize="18dp"
-        android:textColor="#F44336"
-        android:background="@drawable/edittext_background"
-        android:gravity="center"
-        android:visibility="gone"/>
+        <!-- mismatch function-->
+
+        <Button
+            android:id="@+id/startSharing"
+            android:layout_width="138dp"
+            android:layout_height="138dp"
+            android:layout_below="@+id/stopSharing"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="180dp"
+            android:layout_marginBottom="40dp"
+            android:backgroundTint="#F44336"
+            android:text="STOP SHARING"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/stopSharing"
+            android:layout_width="138dp"
+            android:layout_height="138dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#1AD322"
+            android:text="START SHARING"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
 
 
 </RelativeLayout>
