@@ -43,7 +43,7 @@ public class Bus_List_3 extends AppCompatActivity {
                 }
               else{
                     busId = spinner.getSelectedItem().toString();
-                    Intent intent = new Intent(Bus_List_3.this, Driver_Activity.class);
+                    Intent intent = new Intent(Bus_List_3.this, DriverActivity2.class);
                     intent.putExtra("calling-activity", ActivityConstants.ACTIVITY_FROM_LOGIN);
                     startActivity(intent);
                     finish();

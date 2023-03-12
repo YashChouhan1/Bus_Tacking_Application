@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -19,6 +21,9 @@
         android:theme="@style/Theme.BusBuddydemo"
         android:usesCleartextTraffic="true"
         tools:targetApi="33">
+        <activity
+            android:name=".DriverActivity2"
+            android:exported="false" />
         <activity
             android:name=".Bus_List_Package.BUS_12"
             android:exported="false" />
@@ -110,6 +115,12 @@
         <activity
             android:name=".BusActivity"
             android:exported="false" />
+
+        <service
+            android:name="com.example.busbuddydemo.LocationServices2"
+            android:enabled="true"
+            android:exported="false" />
+
         <activity
             android:name=".LoginPage"
             android:exported="true">

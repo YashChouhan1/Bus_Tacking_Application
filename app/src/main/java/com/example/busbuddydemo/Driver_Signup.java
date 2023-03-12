@@ -91,7 +91,7 @@ public class Driver_Signup extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(AuthResult authResult) {
                                     Toast.makeText(Driver_Signup.this, "Driver Registered Successfully.", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(Driver_Signup.this, Driver_Activity.class);
+                                    Intent intent = new Intent(Driver_Signup.this, DriverActivity2.class);
                                     intent.putExtra("calling-activity", ActivityConstants.ACTIVITY_FROM_SIGNUP);
                                     startActivity(intent);
                                     progressDialog.cancel();

@@ -105,6 +105,7 @@
         android:background="@drawable/edittext_background4"
         android:drawableStart="@drawable/baseline_local_phone_24"
         android:drawablePadding="20dp"
+        android:maxLength="10"
         android:hint="Phone no."
         android:inputType="date"
         android:padding="17dp"

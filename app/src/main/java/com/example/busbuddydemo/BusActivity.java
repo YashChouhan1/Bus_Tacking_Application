@@ -39,7 +39,7 @@ public class BusActivity extends AppCompatActivity {
         routes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(BusActivity.this, Bus_List.class);
+                Intent intent = new Intent(BusActivity.this, Bus_List.class);  //Bus_List
                 startActivity(intent);
                 finish();
             }

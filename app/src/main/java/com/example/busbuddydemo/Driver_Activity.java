@@ -74,7 +74,7 @@ public class Driver_Activity extends AppCompatActivity implements OnMapReadyCall
 //    Bundle bundle = getIntent().getExtras();
 //    String data = bundle.getString("key");
 
-    String busId;
+    static String busId;
     int callingActivity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -183,7 +183,6 @@ public class Driver_Activity extends AppCompatActivity implements OnMapReadyCall
                 locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
     }
 
-
     private boolean requestSinglePermission() {
 
         Dexter.withActivity(this)
@@ -209,7 +208,6 @@ public class Driver_Activity extends AppCompatActivity implements OnMapReadyCall
 
         return isPermission;
     }
-
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
@@ -248,17 +246,6 @@ public class Driver_Activity extends AppCompatActivity implements OnMapReadyCall
 
         LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient,mLocationRequest, this);
     }
-
-    @Override
-    public void onConnectionSuspended(int i) {
-
-    }
-
-    @Override
-    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-
-    }
-
     @Override
     public void onLocationChanged(@NonNull Location location) {
         String message = "Updated Locaton : " + Double.toString(location.getLatitude()) + "," +
@@ -273,7 +260,6 @@ public class Driver_Activity extends AppCompatActivity implements OnMapReadyCall
         hashMap.put("Bus No", busId);
 
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-
         databaseReference.child(busId).setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -285,24 +271,7 @@ public class Driver_Activity extends AppCompatActivity implements OnMapReadyCall
                 }
             }
         });
-
-//        LocationHelper helper = new LocationHelper(location.getLongitude(), location.getLatitude());
-//
-//        FirebaseDatabase.getInstance().getReference("Driver")
-//                .setValue(helper).addOnCompleteListener(new OnCompleteListener<Void>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<Void> task) {
-//
-//                        if(task.isSuccessful()){
-//                            Toast.makeText(Driver_Activity.this , "Location Saved" , Toast.LENGTH_SHORT).show();
-//                        }
-//                        else{
-//                            Toast.makeText(Driver_Activity.this , "Location Not Saved" , Toast.LENGTH_SHORT).show();
-//                        }
-//                    }
-//                });
     }
-
     protected void onStart() {
         super.onStart();
 
@@ -310,15 +279,7 @@ public class Driver_Activity extends AppCompatActivity implements OnMapReadyCall
             mGoogleApiClient.connect();
         }
     }
-
     @Override
-    protected void onStop() {
-        super.onStop();
-        if(mGoogleApiClient.isConnected()){
-            mGoogleApiClient.disconnect();
-        }
-    }
-
     public void onBackPressed() {
         if (callingActivity == ActivityConstants.ACTIVITY_FROM_LOGIN) {
             Intent intent = new Intent(Driver_Activity.this, LoginPage.class);
@@ -330,6 +291,14 @@ public class Driver_Activity extends AppCompatActivity implements OnMapReadyCall
             startActivity(intent);
             finish();
         }
+    }
+    @Override
+    public void onConnectionSuspended(int i) {
+
+    }
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
     }
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
